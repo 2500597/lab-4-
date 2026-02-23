@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATM System</title>
+</head>
+<body>
+
+    <h2>ATM System</h2>
+
+    <h3 id="balance">Current Balance: 5000</h3>
+
+    <label>Enter Withdrawal Amount:</label>
+    <input type="number" id="amount"><br><br>
+
+    <button onclick="withdraw()">Withdraw</button>
+
+    <script>
+        let balance = 5000;   
+
+        function withdraw() {
+            let amount = Number(document.getElementById("amount").value);
+
+            if (amount > balance) {
+                alert("Insufficient Balance!");
+            } else {
+                balance = balance - amount;
+                alert("Withdrawal Successful!");
+                document.getElementById("balance").innerHTML =
+                    "Current Balance: " + balance;
+            }
+        }
+    </script>
+
+</body>
+</html>
